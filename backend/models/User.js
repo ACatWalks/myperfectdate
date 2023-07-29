@@ -37,7 +37,60 @@ const userSchema = new Schema(
     },
     preferredSex: {
         type: String,
-        enum: ['Man', 'Woman']
+        enum: ['Man', 'Woman', 'No preference']
+    },
+    goals: {
+        type: String,
+        enum: ['Relationship', 'Marriage', 'Casual Sex', 'Other']
+    },
+    values: {
+        type: String,
+        enum: ['save/invest', 'spend', 'donate', 'return']
+    },
+    perfectDate: {
+        type: String,
+    },
+    desires1: {
+        type: Number,
+    },
+    desires2: {
+        type: Number,
+    },
+    desires3: {
+        type: Number,
+    },
+    desires4: {
+        type: Number,
+    },
+    desires5: {
+        type: Number,
+    },
+    desires6: {
+        type: Number,
+    },
+    attributes1: {
+        type: Number,
+    },
+    attributes2: {
+        type: Number,
+    },
+    attributes3: {
+        type: Number
+    },
+    attributes4: {
+        type: Number,
+    },
+    attributes5: {
+        type: Number,
+    },
+    attributes6: {
+        type: Number
+    },
+    selfDescription: {
+        type: String,
+    },
+    desireDescription: {
+        type: String
     },
     chats: {
         type: [{
