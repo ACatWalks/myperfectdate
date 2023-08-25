@@ -9,6 +9,7 @@ function NavBar() {
         profilepic: sessionStorage.getItem('profilepic'),
         userRace: sessionStorage.getItem('user_race'),
         userSex: sessionStorage.getItem('user_sex'),
+        preferredRace: sessionStorage.getItem('preferred_race'),
         preferredSex: sessionStorage.getItem('preferred_sex')
     })
 
@@ -45,7 +46,7 @@ function NavBar() {
     }
 
     function logout() {
-        setUser({userName: '', email: '', pass: '', profilepic: '', userRace: '', userSex: '', preferredSex: ''})
+        setUser({userName: '', email: '', pass: '', profilepic: '', userRace: '', userSex: '', preferredRace: [], preferredSex: ''})
         sessionStorage.clear()
     }
 
@@ -65,6 +66,8 @@ function NavBar() {
         <div className='nav'>
             <button><Link to="/">Home</Link></button>
             <button><Link to="/signup">Sign Up</Link></button>
+            {pic()}
+            {handleName()}
             {toggle()}
             <button><Link to="/edit">Edit Profile</Link></button>
             <button><Link to="/matches">See My Matches</Link></button>

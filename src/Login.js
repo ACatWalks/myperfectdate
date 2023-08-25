@@ -12,6 +12,7 @@ function Login () {
         profilepic: '',
         userRace: '',
         userSex: '',
+        preferredRace: [],
         preferredSex: '',
         id: ''
     })
@@ -41,6 +42,7 @@ function Login () {
             sessionStorage.setItem('profilepic', data.profilepic)
             sessionStorage.setItem('user_race', data.userRace)
             sessionStorage.setItem('user_sex', data.userSex)
+            sessionStorage.setItem('preferred_race', data.preferredRace)
             sessionStorage.setItem('preferred_sex', data.preferredSex)
             sessionStorage.setItem('id', data.id)
             navigate('/')

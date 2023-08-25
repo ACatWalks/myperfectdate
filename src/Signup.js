@@ -12,6 +12,7 @@ function Signup() {
         profilepic: '',
         userRace: '',
         userSex: '',
+        preferredRace: [],
         preferredSex: '',
         goal: '',
         values: '',
@@ -78,6 +79,16 @@ function Signup() {
                     <label htmlFor='user_sex'>Are you a man or a woman?</label>
                     <input type='radio' name='user_sex' value={user.userSex} onClick={setUser({...user, userSex: 'Man'})}>Man</input>
                     <input type='radio' name='user_sex' value={user.userSex} onClick={setUser({...user, userSex: 'Woman'})}>Woman</input>
+                </div>
+                <div>
+                    <label htmlFor='preferred_race'>Which race(s), if any, do you prefer?</label>
+                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Asian'})}>Asian</input>
+                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'White'})}>White</input>
+                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Hispanic'})}>Hispanic</input>
+                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Native American'})}>Native American</input>
+                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Black'})}>Black</input>
+                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Mixed Race/Other'})}>Mixed Race/Other</input>
+                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'No preference'})}>No preference</input>
                 </div>
                 <div>
                     <label htmlFor='preferred_sex'>Are you seeking a man or a woman?</label>

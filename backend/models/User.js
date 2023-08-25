@@ -35,6 +35,10 @@ const userSchema = new Schema(
         type: String,
         enum: ['Man', 'Woman']
     },
+    preferredRace: {
+        type: String,
+        enum: ['Asian', 'White', 'Hispanic', 'Native American', 'Black', 'Mixed Race/Other', 'No preference']
+    },
     preferredSex: {
         type: String,
         enum: ['Man', 'Woman', 'No preference']
