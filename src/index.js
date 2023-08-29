@@ -9,6 +9,7 @@ import Login from './Login';
 import MyMatches from './MyMatches'
 import Signup from './Signup';
 import Edit from './Edit'
+import Profile from './Profile'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
       <Route path='/matches' element={<MyMatches />} />
       <Route path='/signup' element={<Signup />} />
       <Route path="/edit" element={<Edit />} />
+      <Route path='/:id' element={<Profile />} />
     </Routes>
   </BrowserRouter>
 );
