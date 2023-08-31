@@ -16,7 +16,6 @@ function Signup() {
         preferredSex: '',
         goal: '',
         values: '',
-        perfectDate: '',
         desires1: 5,
         desires2: 5,
         desires3: 5,
@@ -29,8 +28,6 @@ function Signup() {
         attributes4: 5,
         attributes5: 5,
         attributes6: 5,
-        selfDescription: '',
-        desireDescription: ''
     })
 
     async function handleSubmit(e) {
@@ -82,13 +79,13 @@ function Signup() {
                 </div>
                 <div>
                     <label htmlFor='preferred_race'>Which race(s), if any, do you prefer?</label>
-                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Asian'})}>Asian</input>
-                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'White'})}>White</input>
-                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Hispanic'})}>Hispanic</input>
-                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Native American'})}>Native American</input>
-                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Black'})}>Black</input>
-                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'Mixed Race/Other'})}>Mixed Race/Other</input>
-                    <input type='checkbox' name='preferred_race' value={user.preferredRace} onClick={setUser({...user, preferredRace: 'No preference'})}>No preference</input>
+                    <input type='checkbox' name='preferred_race'  onClick={user.preferredRace.push('Asian')}>Asian</input>
+                    <input type='checkbox' name='preferred_race'  onClick={user.preferredRace.push('White')}>White</input>
+                    <input type='checkbox' name='preferred_race'  onClick={user.preferredRace.push('Hispanic')}>Hispanic</input>
+                    <input type='checkbox' name='preferred_race'  onClick={user.preferredRace.push('Native American')}>Native American</input>
+                    <input type='checkbox' name='preferred_race'  onClick={user.preferredRace.push('Black')}>Black</input>
+                    <input type='checkbox' name='preferred_race'  onClick={user.preferredRace.push('Mixed Race/Other')}>Mixed Race/Other</input>
+                    <input type='checkbox' name='preferred_race'  onClick={user.preferredRace.push('No preference')}>No preference</input>
                 </div>
                 <div>
                     <label htmlFor='preferred_sex'>Are you seeking a man or a woman?</label>

@@ -69,6 +69,7 @@ function NavBar() {
             {pic()}
             {handleName()}
             {toggle()}
+            <button><Link to="/:id">My Profile</Link></button>
             <button><Link to="/edit">Edit Profile</Link></button>
             <button><Link to="/matches">See My Matches</Link></button>
             <Outlet />

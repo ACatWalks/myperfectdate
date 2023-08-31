@@ -85,13 +85,13 @@ function Edit() {
                 </div>
                 <div>
                     <h5>Which race(s), if any, do you prefer?</h5>
-                    <input type='checkbox' id='asian' name='preferred_race' value='Asian' onClick={e => setUser({...user, preferredRace: 'Asian'})} />
-                    <input type='checkbox' id='white' name='preferred_race' value='White' onClick={e => setUser({...user, preferredRace: 'White'})} />
-                    <input type='checkbox' id='hispanic' name='preferred_race' value='Hispanic' onClick={e => setUser({...user, preferredRace: 'Hispanic'})} />
-                    <input type='checkbox' id='native american' name='preferred_race' value='Native American' onClick={e => setUser({...user, preferredRace: 'Native American'})} />
-                    <input type='checkbox' id='black' name='preferred_race' value='Black' onClick={e => setUser({...user, preferredRace: 'Black'})} />
-                    <input type='checkbox' id='mixed race/other' name='preferred_race' onClick={e => setUser({...user, preferredRace: 'Mixed Race/Other'})} />
-                    <input type='checkbox' id='no preference' name='preferred_race' value='No preference' onClick={e => setUser({...user, preferredRace: 'No preference'})} />
+                    <input type='checkbox' id='asian' name='preferred_race' value='Asian' onClick={e => user.preferredRace.push('Asian')} />
+                    <input type='checkbox' id='white' name='preferred_race' value='White' onClick={e => user.preferredRace.push('White')} />
+                    <input type='checkbox' id='hispanic' name='preferred_race' value='Hispanic' onClick={e => user.preferredRace.push('Hispanic')} />
+                    <input type='checkbox' id='native american' name='preferred_race' value='Native American' onClick={e => user.preferredRace.push('Native American')} />
+                    <input type='checkbox' id='black' name='preferred_race' value='Black' onClick={e => user.preferredRace.push('Black')} />
+                    <input type='checkbox' id='mixed race/other' name='preferred_race' onClick={e => user.preferredRace.push('Mixed Race/Other')} />
+                    <input type='checkbox' id='no preference' name='preferred_race' value='No preference' onClick={e => user.preferredRace.push('No preference')} />
                 </div>
                 <div>
                     <h5>Are you seeking a:</h5>

@@ -36,8 +36,7 @@ const userSchema = new Schema(
         enum: ['Man', 'Woman']
     },
     preferredRace: {
-        type: String,
-        enum: ['Asian', 'White', 'Hispanic', 'Native American', 'Black', 'Mixed Race/Other', 'No preference']
+        type: Array[String]
     },
     preferredSex: {
         type: String,
@@ -50,9 +49,6 @@ const userSchema = new Schema(
     values: {
         type: String,
         enum: ['save/invest', 'spend', 'donate', 'return']
-    },
-    perfectDate: {
-        type: String,
     },
     desires1: {
         type: Number,
@@ -89,12 +85,6 @@ const userSchema = new Schema(
     },
     attributes6: {
         type: Number
-    },
-    selfDescription: {
-        type: String,
-    },
-    desireDescription: {
-        type: String
     },
     chats: {
         type: [{

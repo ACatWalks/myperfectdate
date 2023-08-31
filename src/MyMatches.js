@@ -21,7 +21,10 @@ function MyMatches() {
         for(let i=0; i<others.length; i++){
             let score = 0
             let other = others[i]
-            if(user.preferredRace === other.userRace && user.preferredSex === other.userSex && user.goals === other.goals){
+            if(user.preferredRace.includes('No preference') && user.preferredSex === other.userSex && user.goals === other.goals){
+                score = score + 10
+            }
+            else if(user.preferredRace.includes(other.userRace) && user.preferredSex === other.userSex && user.goals === other.goals){
                 score = score + 10
             }
             if(user.values === other.values){
