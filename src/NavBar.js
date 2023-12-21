@@ -53,25 +53,25 @@ function NavBar() {
     function toggle() {
         if(!user.email){
             return (
-                <button><Link to="/login">Log In</Link></button>
+                <button><Link to="/login" className='navlink'>Log In</Link></button>
             )
         } else{
             return (
-                <button onClick={logout}><Link to="/">Log Out</Link></button>
+                <button onClick={logout}><Link to="/" className='navlink'>Log Out</Link></button>
             )
         }
     }
 
     return (
         <div className='nav'>
-            <button><Link to="/">Home</Link></button>
-            <button><Link to="/signup">Sign Up</Link></button>
+            <button><Link to="/" className='navlink'>Home</Link></button>
+            <button><Link to="/signup" className='navlink'>Sign Up</Link></button>
             {pic()}
             {handleName()}
             {toggle()}
-            <button><Link to="/:id">My Profile</Link></button>
-            <button><Link to="/edit">Edit Profile</Link></button>
-            <button><Link to="/matches">See My Matches</Link></button>
+            <button><Link to="/:id" className='navlink'>My Profile</Link></button>
+            <button><Link to="/edit" className='navlink'>Edit Profile</Link></button>
+            <button><Link to="/matches" className='navlink'>See My Matches</Link></button>
             <Outlet />
         </div>
     )

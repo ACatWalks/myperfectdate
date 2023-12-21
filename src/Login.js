@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import useNavigate from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import NavBar from './NavBar'
 
 function Login () {
@@ -57,16 +57,16 @@ function Login () {
             <h1>Log In</h1>
             {errorMessage !== null? (<div className='danger' role='alert'>{errorMessage}</div>) : null}
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className='form-div'>
                     <label htmlFor='email'>Email</label>
                     <input type='email' required value={credentials.email} onChange={e => setCredentials({...credentials, email: e.target.value})} name='email' id='email' />
                 </div>
-                <div>
-                    <label htmlFor='pass'></label>
+                <div className='form-div'>
+                    <label htmlFor='pass'>Password</label>
                     <input type="password" required value={credentials.pass} onChange={e => setCredentials({...credentials, pass: e.target.value})} name='pass' id='pass' />
                 </div>
-                <div>
-                    <input type='submit' value='Log In' />
+                <div className='form-div'>
+                    <input type='submit' value='Log In' className='login-button' />
                 </div>
             </form>
         </div>

@@ -13,7 +13,7 @@ function Profile() {
     }
 
     return (
-        <main>
+        <main className='profile-page'>
             <NavBar />
             <h1>My Profile Page</h1>
             <h5>Username: {user.userName}</h5>

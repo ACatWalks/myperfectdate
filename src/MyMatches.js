@@ -52,11 +52,7 @@ function MyMatches() {
                 matches.push(other.userName)
             }
         }
-        matches.map(match => {
-            return
-                {match}
-                <button onClick={handleClick}>Click to chat with {match}</button>
-        })
+        return matches
     }
     async function handleClick(){
         const user = await fetch(`https://my-perfect-date.herokuapp.com/users/${userEmail}`, {
@@ -65,7 +61,7 @@ function MyMatches() {
                 'Content-Type': 'application/json'
             }
         })
-        return <Chats user={user} match={match} />
+        return <Chats user={user} />
     }
     return (
         <div>
