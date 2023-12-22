@@ -79,3 +79,65 @@ h1{
   padding: 10px;
   color: #fafafa;
 }
+
+.carousel-images{
+  margin-top: 35px;
+  border-radius: 10px;
+  height: 250px;
+  max-width: 650px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-images img{
+  width: 30%;
+  height: 80%;
+  border-radius: 8px;
+  border: #ff00008e solid 2px;
+}
+
+.slide-direction{
+  display: flex;
+  justify-content: space-between;
+}
+
+.left, .right{
+  background-color: #fb666675;
+  color: #fff;
+  padding: 10px 8px 8px 13px;
+  margin: 0 20px;
+  border-radius: 50%;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  margin: auto 10px;
+  height: 25px;
+  width: 25px;
+}
+
+.left{
+  left: 0;
+  margin-right: 20px;
+}
+
+.right{
+  right: 0;
+}
+
+.indicator{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dot{
+  background-color: #333;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.active{
+  background-color: #fa2020;
+}
