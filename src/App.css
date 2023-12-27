@@ -141,3 +141,8 @@ h1{
 .active{
   background-color: #fa2020;
 }
+
+#asian, #white, #hispanic, #native_american, #black, #no_race_preference, #man, #woman, #no_sex_preference{
+  margin-left: 15px;
+  margin-right: 15px;
+}
