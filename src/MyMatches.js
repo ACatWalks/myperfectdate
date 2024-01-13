@@ -11,7 +11,7 @@ function MyMatches() {
                 'Content-Type': 'application/json'
             }
         })
-        const others = await fetch(`https://my-prefect-date.herokuapp.com/users`, {
+        const others = await fetch(`https://my-perfect-date.herokuapp.com/users`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,7 +21,13 @@ function MyMatches() {
         for(let i=0; i<others.length; i++){
             let score = 0
             let other = others[i]
-            if(user.preferredRace.includes('No preference') && user.preferredSex === other.userSex && user.goals === other.goals){
+            if(user.preferredSex === 'No preference' && user.goals === other.goals && user.preferredRace.includes(other.userRace)){
+                score = score + 10
+            }
+            else if(user.preferredSex === 'No preference' && user.goals === other.goals && user.preferredRace.includes('No preference')){
+                score = score + 10
+            }
+            else if(user.preferredRace.includes('No preference') && user.preferredSex === other.userSex && user.goals === other.goals){
                 score = score + 10
             }
             else if(user.preferredRace.includes(other.userRace) && user.preferredSex === other.userSex && user.goals === other.goals){
@@ -67,6 +73,7 @@ function MyMatches() {
         <div>
             <NavBar />
             {findMatches()}
+            <button onClick={handleClick}>Chat with your matches</button>
         </div>
     )
 }
