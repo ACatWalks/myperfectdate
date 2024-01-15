@@ -108,10 +108,6 @@ function Signup() {
                     <input type='radio' name='values' value={user.values} onClick={setUser({...user, values: 'return'})}>Return it</input>
                 </div>
                 <div>
-                    <label htmlFor='perfect_date'>Describe your perfect date</label>
-                    <input type='text' required value={user.perfectDate} onChange={e => setUser({...user, perfectDate: e.target.value})} />
-                </div>
-                <div>
                     <label htmlFor='desires'>Please rate on a scale of 1 to 10 (1 being least important, 10 being most important) how important it is to you that your partner have:</label>
                     <input required type='number' min={1} max={10} maxLength={2} onChange={e => setUser({...user, desires1: e.target.value})}>A good income</input>
                     <input required type='number' min={1} max={10} maxLength={2} onChange={e => setUser({...user, desires2: e.target.value})}>Good looks</input>
@@ -128,14 +124,6 @@ function Signup() {
                     <input required type='number' min={1} max={10} maxLength={2} onChange={e => setUser({...user, attributes4: e.target.value})}>Athletic ability</input>
                     <input required type='number' min={1} max={10} maxLength={2} onChange={e => setUser({...user, attributes5: e.target.value})}>A pleasant personality</input>
                     <input required type='number' min={1} max={10} maxLength={2} onChange={e => setUser({...user, attributes6: e.target.value})}>A lot of friends</input>
-                </div>
-                <div>
-                    <label htmlFor='self_description'>Please give a brief description of yourself</label>
-                    <input type='text' required value={user.selfDescription} onChange={e => setUser({...user, selfDescription: e.target.value})} />
-                </div>
-                <div>
-                    <label htmlFor='desire_description'>Please give a brief description of what you are looking for in a partner</label>
-                    <input type='text' required value={user.desireDescription} onChange={e => setUser({...user, desireDescription: e.target.value})} />
                 </div>
                 <div>
                     <input type='submit' value='Create Profile' />

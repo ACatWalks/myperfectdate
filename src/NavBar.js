@@ -66,8 +66,10 @@ function NavBar() {
         <div className='nav'>
             <button><Link to="/" className='navlink'>Home</Link></button>
             <button><Link to="/signup" className='navlink'>Sign Up</Link></button>
+            <div className='profile-pic'>
             {pic()}
             {handleName()}
+            </div>
             {toggle()}
             <button><Link to="/:id" className='navlink'>My Profile</Link></button>
             <button><Link to="/edit" className='navlink'>Edit Profile</Link></button>

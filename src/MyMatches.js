@@ -67,13 +67,18 @@ function MyMatches() {
                 'Content-Type': 'application/json'
             }
         })
-        return <Chats user={user} />
+        if(user){
+            return <Chats user={user} />
+        }
+        else{
+            return <p>User not found. Are you logged in?</p>
+        }
     }
     return (
-        <div>
+        <div className='matches'>
             <NavBar />
-            {findMatches()}
-            <button onClick={handleClick}>Chat with your matches</button>
+            {findMatches}
+            <button id='match-button' onClick={handleClick}>Chat with your matches</button>
         </div>
     )
 }
