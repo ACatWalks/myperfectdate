@@ -21,16 +21,37 @@ function MyMatches() {
         for(let i=0; i<others.length; i++){
             let score = 0
             let other = others[i]
-            if(user.preferredSex === 'No preference' && user.goals === other.goals && user.preferredRace.includes(other.userRace)){
+            let userRaceIndex 
+            switch(user.race){
+                case 'Asian':
+                    userRaceIndex = 0;
+                    break;
+                case 'White':
+                    userRaceIndex = 1;
+                    break;
+                case 'Hispanic':
+                    userRaceIndex = 2;
+                    break;
+                case 'Native American':
+                    userRaceIndex = 3;
+                    break;
+                case 'Black':
+                    userRaceIndex = 4;
+                    break;
+                case 'Mixed race/Other':
+                    userRaceIndex = 5;
+                    break;
+            }
+            if(user.preferredSex === 'No preference' && user.goals === other.goals && other.preferredRace[userRaceIndex] === true){
                 score = score + 10
             }
-            else if(user.preferredSex === 'No preference' && user.goals === other.goals && user.preferredRace.includes('No preference')){
+            else if(user.preferredSex === 'No preference' && user.goals === other.goals && user.preferredRace[6] === true){
                 score = score + 10
             }
-            else if(user.preferredRace.includes('No preference') && user.preferredSex === other.userSex && user.goals === other.goals){
+            else if(user.preferredRace[6] === true && user.preferredSex === other.userSex && user.goals === other.goals){
                 score = score + 10
             }
-            else if(user.preferredRace.includes(other.userRace) && user.preferredSex === other.userSex && user.goals === other.goals){
+            else if(other.preferredRace[userRaceIndex] === true && user.preferredSex === other.userSex && user.goals === other.goals){
                 score = score + 10
             }
             if(user.values === other.values){
