@@ -1,9 +1,13 @@
 import React from 'react'
 import NavBar from './NavBar'
 import Chats from './Chats'
+import {Link, Outlet} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function MyMatches() {
     const userEmail = sessionStorage.getItem('email')
+    const userId = sessionStorage.getItem('id')
+    const navigate = useNavigate()
     async function findMatches(){
         const user = await fetch(`https://my-perfect-date.herokuapp.com/users/${userEmail}`, {
             method: 'GET',
@@ -79,9 +83,41 @@ function MyMatches() {
                 matches.push(other.userName)
             }
         }
+        let reqBody = {
+            self: userId,
+            match: ''
+        }
+        /*function setMatchId(e) {
+            e.preventDefault()
+            reqBody.match = e.target.value
+        }*/
+        async function createChat(id) {
+            //e.preventDefault()
+            reqBody.match = id
+            const chat = await fetch(`https://my-perfect-date.herokuapp.com/chats/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(reqBody)
+            })
+            const res = await chat.json()
+            navigate('/chats')
+        }
+        /*function handleClick(id){
+            setMatchId(id)
+            createChat(e)
+        }*/
+        matches.map((match) => {
+            <div>
+                <Link to={`/${match.id}`} className='navlink'>{match.userName}</Link>
+                <button id='match-button' onClick={createChat(match.id)}>Chat with this match</button>
+                <Outlet />
+            </div>
+        })
         return matches
     }
-    async function handleClick(){
+    /*async function handleClick(){
         const user = await fetch(`https://my-perfect-date.herokuapp.com/users/${userEmail}`, {
             method: 'GET',
             headers: {
@@ -94,12 +130,11 @@ function MyMatches() {
         else{
             return <p>User not found. Are you logged in?</p>
         }
-    }
+    }*/
     return (
         <div className='matches'>
             <NavBar />
             {findMatches}
-            <button id='match-button' onClick={handleClick}>Chat with your matches</button>
         </div>
     )
 }

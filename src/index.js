@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Chats from './Chats'
+import ChatActivity from './ChatActivity'
 import Login from './Login';
 import MyMatches from './MyMatches'
 import Signup from './Signup';
@@ -17,6 +18,7 @@ root.render(
     <Routes>
       <Route path='/' element={<App />} />
       <Route path='/chats' element={<Chats />} />
+      <Route path='/chatactivity' element={<ChatActivity />} />
       <Route path='/login' element={<Login />} />
       <Route path='/matches' element={<MyMatches />} />
       <Route path='/signup' element={<Signup />} />

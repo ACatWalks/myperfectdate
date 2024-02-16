@@ -24,7 +24,7 @@ router.post('/', async(req, res) => {
             }
         })
 
-        User.updateOne({_id: newChat.user}, {$push: {chats: newChat.id}},
+        User.updateOne({_id: newChat.users}, {$push: {chats: newChat.id}},
                 function(error, success){
                     if(error){
                         console.log(error, 'chat controller failed to add chat to user')
